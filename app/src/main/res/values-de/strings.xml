@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="active_tasks">Aktive ToDo\'s</string>
+    <string name="back">Zurück</string>
+    <string name="back_to_dashboard">Zurück zum Dashboard</string>
+    <string name="app_name">ToDo Liste 2</string>
+    <string name="cancel">Abbrechen</string>
+    <string name="collapse">Einklappen</string>
+    <string name="create_new_task">Neuen Eintrag anlegen</string>
+    <string name="create_task">Eintrag anlegen</string>
+    <string name="due_date">Fälligkeitsdatum</string>
+    <string name="delete">Löschen</string>
+    <string name="description">Beschreibung</string>
+    <string name="edit_task">Eintrag bearbeiten</string>
+    <string name="expand">Ausklappen</string>
+    <string name="finished">Erledigt</string>
+    <string name="finished_tasks">Fertige ToDo\'s</string>
+    <string name="hold_to_edit">Lang drücken zum Bearbeiten</string>
+    <string name="name">Name</string>
+    <string name="ok">OK</string>
+    <string name="priority">Priorität</string>
+    <string name="save">Speichern</string>
+    <string name="select_date">Datum auswählen</string>
+    <string name="select_time">Zeit auswählen</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="error_blank_input">Felder dürfen nicht leer sein</string>
+</resources>

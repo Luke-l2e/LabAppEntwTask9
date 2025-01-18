@@ -1,4 +1,6 @@
 # ToDo App - Abgabeprojekt
+HHN - AIB3 - LabAppEntw - Task 9 - Persistence and Database implementation
+## Installation
 
 Diese App dient als Abgabeprojekt zur Demonstration von SQLite-Datenbankanbindung in Android.
 
@@ -91,3 +93,6 @@ Ein ToDo besteht aus:
 - Min. SDK: API 26
 - Target SDK: API 34
 - Getestet auf Pixel 8 Emulator
+
+# Credits
+<a href="https://www.flaticon.com/free-icons/to-do-list" title="to do list icons">App Logo created by Freepik - Flaticon</a>
