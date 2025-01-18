@@ -1,98 +1,67 @@
 # ToDo App - Abgabeprojekt
 HHN - AIB3 - LabAppEntw - Task 9 - Persistence and Database implementation
+
 ## Installation
+Download the ![apk](https://github.com/Luke-l2e/LabAppEntwTask9/blob/master/app/release/app-release.apk) and execute it on your mobile
 
-Diese App dient als Abgabeprojekt zur Demonstration von SQLite-Datenbankanbindung in Android.
-
-## Aufgabenbeschreibung
-
-Entwickeln Sie eine ToDo-App mit folgender Funktionalität:
-
+## Overview and description
+This app has three screens:
+1. The Dashboard. That's your starting point when opening the app.
+2. The Active Tasks screen. It will list all open ToDo's.
+3. The Finished Tasks screen. It will list all finished ToDo's.
 
 ### Dashboard
-- Zwei Hauptansichten:
-    - Aktive ToDos
-    - Erledigte ToDos
-- Nach App-Start wird das Dashboard angezeigt
+You have to buttons which lead you to either the Active Tasks screen or the Finished Tasks screen.\
+<img src="https://github.com/user-attachments/assets/51b35d21-0da3-4699-9cea-439219d6d51d" alt="Dashboard" width="300"/>\
 
-### ToDo-Funktionen
-- Anzeige der aktiven ToDos als Cards
-- "+" Button zum Hinzufügen neuer ToDos
-- Bearbeiten-Button auf jeder ToDo-Card
-- Erledigte ToDos werden separat mit Erledigungs-Markierung angezeigt
-- ToDo´s sollen gelöscht werden können
+### Task List
+As you can see from top to bottom:
+* An arrow to return to the Dashboard
+* Several expandable items. Each with a name, description, priority and date
+* When pressing on an expanded item for a few seconds it will open a dialog to edit it
+* at the bottom right corner there's a floating action button to create a new task
 
-### ToDo-Attribute
-Ein ToDo besteht aus:
-- Name
-- Priorität
-- Endzeitpunkt
-- Beschreibungstext
-- Status (erledigt/offen)
+<img src="https://github.com/user-attachments/assets/0d7aee70-8453-4bdf-8932-98fdd3eadb77" alt="Task List" width="300"/>
 
-## Technische Vorgaben
-- Implementierung ausschließlich in Jetpack Compose
-- SQLite-Datenbank zur Datenspeicherung
-- Saubere Code-Struktur
-- Fehlerbehandlung implementieren
+### Editable tasks
+As said you can either create new tasks or edit them. On top of them you can also delete them permanently.\
+You can set the date, by clicking on it. It's shown in the system locale and zone format. So depending what you're used to it should look familiar.\
+When you toggle the finish checkbox and save it it will disappear from the current list and be shown in the other one.\
+<img src="https://github.com/user-attachments/assets/dbcecdf2-0e92-48f7-9b9c-d003dec24d3f" alt="Edit Task" width="300"/>
 
-## Bewertung (100 Punkte)
+### Choosable Priority
+When clicking on the priority you can see a drop down menu from which you can select your preferred priority.\
+<img src="https://github.com/user-attachments/assets/919eedf8-6969-49b2-bd8b-919e6031debd" alt="Priority Drop Down Menu" width="300"/>
 
-### 1. Formale Anforderungen (10 Punkte)
-- Formal korrekte Abgabe via GitHub Repository (10P)
+### Date Picker
+When clicking on the date in the editable view a date picker will pop up allowing you to select a date.\
+<img src="https://github.com/user-attachments/assets/a805fdd7-bca2-49c5-9a2a-c2c95cda2274" alt="Date Picker" width="300"/>
 
-### 2. Datenbank (20 Punkte)
-- Tabellenstruktur (5P)
-- NOT NULL Constraints (5P)
-- Datenbankabfragen (5P)
-- DatabaseHelper (5P)
+### Time Picker
+After selecting a date a time picker will let you choose a specific time.\
+<img src="https://github.com/user-attachments/assets/e389fbe6-15ba-4843-b6ba-0c8f53836f5b" alt="Time Picker" width="300"/>
 
-### 3. Benutzeroberfläche (20 Punkte)
-- Jetpack Compose Umsetzung (5P)
-- Dashboard (5P)
-- ToDo-Cards mit Edit (5P)
-- Material Design (5P)
+### Internationalization
+The app currently supports two languages:
+* english (default)
+* german
 
-### 4. Funktionalität (30 Punkte)
-- CRUD-Operationen (10P)
-- Statusverwaltung (5P)
-- Filterung nach Status (5P)
-- Prioritätensystem (5P)
-- Deadline-Verwaltung (5P)
+You can choose between them in the app settings if you're using android 13 or higher\
+<img src="https://github.com/user-attachments/assets/59b346a8-4595-42bc-90e4-a3424b7607cf" alt="Language Settings" width="300"/>
 
-### 5. Code-Qualität (20 Punkte)
-- Fehlerbehandlung (5P)
-- Absturzsicherheit (5P)
-- Projektstruktur (5P)
-- Code-Dokumentation (5P)
+## Features
+* SQLite database integration
+* CRUD operations
+* Implementation of a DatabaseHelper
+* Demonstration of using ContentValues and Cursors
+* Example of working with ListViews
 
-## Punktabzüge
-- App-Abstürze (-10P)
-- Fehlende Kernfunktionen (-15P)
-- Fehlendes Jetpack Compose (-10P)
-- Mangelhafte Code-Qualität (-10P)
+## Known issues
+* No dark mode support
+* Rotating your device will reset the current Screen
+* Bad looking design
 
-## Abgabe
-- GitHub Repository
-- Lauffähige APK
-- README mit:
-    - Installationsanleitung
-    - Funktionsbeschreibung
-    - Verwendete Technologien
-    - Bekannte Probleme
-
-## Hinweise zur Entwicklung
-1. Testen Sie Ihre App gründlich
-2. Achten Sie auf Absturzsicherheit
-3. Implementieren Sie Fehlerbehandlung
-4. Kommentieren Sie wichtige Codeabschnitte
-5. Verwenden Sie sprechende Bezeichner
-
-## Voraussetzungen
-- Android Studio
-- Min. SDK: API 26
-- Target SDK: API 34
-- Getestet auf Pixel 8 Emulator
+*There's no update planned. It's the second time within 3 months that I created a ToDo-app. But I'm planning on updating my ![Random Game Selector](https://github.com/Luke-l2e/RandomGameSelector) from scratch soon.*
 
 # Credits
 <a href="https://www.flaticon.com/free-icons/to-do-list" title="to do list icons">App Logo created by Freepik - Flaticon</a>
