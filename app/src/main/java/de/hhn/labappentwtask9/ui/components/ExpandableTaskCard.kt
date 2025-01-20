@@ -11,11 +11,13 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.KeyboardArrowDown
 import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.Checkbox
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -28,6 +30,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import de.hhn.labappentwtask9.R
 import de.hhn.labappentwtask9.database.data.Task
@@ -47,6 +50,7 @@ import java.util.Locale
 @Composable
 fun ExpandableTaskCard(task: Task, onEditClick: () -> Unit) {
     var expanded by remember { mutableStateOf(false) }
+    val state = remember { task.state }
     Card(
         modifier = Modifier
             .fillMaxWidth()
@@ -73,15 +77,26 @@ fun ExpandableTaskCard(task: Task, onEditClick: () -> Unit) {
             ) {
                 Text(
                     text = task.name,
-                    style = MaterialTheme.typography.bodyLarge
+                    style = MaterialTheme.typography.bodyLarge,
+                    overflow = TextOverflow.Clip,
+                    maxLines = 1, modifier = Modifier.weight(1.0f)
                 )
-                IconButton(onClick = { expanded = !expanded }) {
-                    Icon(
-                        imageVector = if (expanded) Icons.Default.KeyboardArrowUp else Icons.Default.KeyboardArrowDown,
-                        contentDescription = if (expanded) stringResource(R.string.collapse) else stringResource(
-                            R.string.expand
+                Row(
+                    modifier = Modifier.wrapContentWidth(),
+                    horizontalArrangement = Arrangement.End,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    if (state) {
+                        Checkbox(checked = state, onCheckedChange = {}, enabled = false)
+                    }
+                    IconButton(onClick = { expanded = !expanded }) {
+                        Icon(
+                            imageVector = if (expanded) Icons.Default.KeyboardArrowUp else Icons.Default.KeyboardArrowDown,
+                            contentDescription = if (expanded) stringResource(R.string.collapse) else stringResource(
+                                R.string.expand
+                            )
                         )
-                    )
+                    }
                 }
             }
 
